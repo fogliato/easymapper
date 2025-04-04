@@ -4,7 +4,6 @@ using System.Reflection;
 
 namespace EasyMapper.Logic
 {
-
     public static class Mapper
     {
         /// <summary>
@@ -462,17 +461,6 @@ namespace EasyMapper.Logic
             else
                 return default(T);
 
-        }
-
-        public static List<T> ConvertDataTableToList<T>(DataTable dt) where T : new()
-        {
-            List<T> data = new List<T>();
-            foreach (DataRow row in dt.Rows)
-            {
-                T item = GetItem<T>(row);
-                data.Add(item);
-            }
-            return data;
         }
 
         private static T GetItem<T>(DataRow dr) where T : new()
